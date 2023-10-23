@@ -9,18 +9,9 @@ import java.net.InetSocketAddress;
 public class client {
     public static void main(String[] args) {
         try {
-            // Récupération de l'adresse IP du serveur
-            InetAddress IA = InetAddress.getByName("192.168.147.20");
-            
-            // Création d'une adresse socket avec l'adresse IP et le port 1234
-            InetSocketAddress ISA = new InetSocketAddress(IA, 1234);
             
             // Création d'une socket cliente
-            Socket client = new Socket();
-            
-            // Connexion au serveur en utilisant l'adresse socket
-            client.connect(ISA);
-            
+            Socket client = new Socket("localhost",1234);
             // Récupération des flux d'entrée et de sortie de la socket
             InputStream input = client.getInputStream();
             OutputStream output = client.getOutputStream();

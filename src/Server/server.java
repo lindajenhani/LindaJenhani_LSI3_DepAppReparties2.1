@@ -8,9 +8,11 @@ public class server {
         try {
             // Création d'un serveur socket écoutant sur le port 1234
             ServerSocket ss = new ServerSocket(1234);
+            System.out.println("Je suis un serveur en attente de la connexion d'un client");
             
             // Attente d'une connexion cliente
             Socket clientSocket = ss.accept();
+            System.out.println("un client est connecté");
             
             // Récupération des flux d'entrée et de sortie de la connexion cliente
             InputStream input = clientSocket.getInputStream();
